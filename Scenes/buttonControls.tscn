@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcm5ybykt452q"]
+
+[ext_resource type="Texture2D" uid="uid://cqg3kucoil21m" path="res://Assets/Sprites/transparent-light/transparentLight22.png" id="1_e76ct"]
+[ext_resource type="Texture2D" uid="uid://bg5e3olxghnd0" path="res://Assets/Sprites/transparent-light/transparentLight23.png" id="2_cpopr"]
+[ext_resource type="Texture2D" uid="uid://n160uhan2w6w" path="res://Assets/Sprites/transparent-light/transparentLight24.png" id="3_m86bl"]
+[ext_resource type="Texture2D" uid="uid://btq80i8obo1gm" path="res://Assets/Sprites/transparent-light/transparentLight25.png" id="4_k56pq"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="left0" type="TouchScreenButton" parent="Control"]
+position = Vector2(8, 152)
+texture_normal = ExtResource("1_e76ct")
+texture_pressed = ExtResource("1_e76ct")
+
+[node name="left1" type="TouchScreenButton" parent="Control"]
+position = Vector2(8, 256)
+texture_normal = ExtResource("1_e76ct")
+texture_pressed = ExtResource("1_e76ct")
+
+[node name="left2" type="TouchScreenButton" parent="Control"]
+position = Vector2(8, 360)
+texture_normal = ExtResource("1_e76ct")
+texture_pressed = ExtResource("1_e76ct")
+
+[node name="right0" type="TouchScreenButton" parent="Control"]
+position = Vector2(1064, 184)
+texture_normal = ExtResource("2_cpopr")
+texture_pressed = ExtResource("2_cpopr")
+
+[node name="right1" type="TouchScreenButton" parent="Control"]
+position = Vector2(1064, 280)
+texture_normal = ExtResource("2_cpopr")
+texture_pressed = ExtResource("2_cpopr")
+
+[node name="right2" type="TouchScreenButton" parent="Control"]
+position = Vector2(1064, 384)
+texture_normal = ExtResource("2_cpopr")
+texture_pressed = ExtResource("2_cpopr")
+
+[node name="up0" type="TouchScreenButton" parent="Control"]
+position = Vector2(416, 16)
+texture_normal = ExtResource("3_m86bl")
+
+[node name="up1" type="TouchScreenButton" parent="Control"]
+position = Vector2(520, 16)
+texture_normal = ExtResource("3_m86bl")
+
+[node name="up2" type="TouchScreenButton" parent="Control"]
+position = Vector2(616, 16)
+texture_normal = ExtResource("3_m86bl")
+
+[node name="down0" type="TouchScreenButton" parent="Control"]
+position = Vector2(416, 544)
+texture_normal = ExtResource("4_k56pq")
+
+[node name="down1" type="TouchScreenButton" parent="Control"]
+position = Vector2(528, 544)
+texture_normal = ExtResource("4_k56pq")
+
+[node name="down2" type="TouchScreenButton" parent="Control"]
+position = Vector2(632, 544)
+texture_normal = ExtResource("4_k56pq")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88bywhwwqfyg"]
+
+[ext_resource type="PackedScene" uid="uid://bwr0d4krnte8i" path="res://Scenes/onlyGrid.tscn" id="1_31wy4"]
+[ext_resource type="PackedScene" uid="uid://dcm5ybykt452q" path="res://Scenes/buttonControls.tscn" id="3_8tpb1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_31wy4")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_8tpb1")]
+
+[connection signal="pressed" from="CanvasLayer/Control/left0" to="grid" method="_on_left_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left1" to="grid" method="_on_left_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left2" to="grid" method="_on_left_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right0" to="grid" method="_on_right_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right1" to="grid" method="_on_right_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right2" to="grid" method="_on_right_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up0" to="grid" method="_on_up_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up1" to="grid" method="_on_up_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up2" to="grid" method="_on_up_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down0" to="grid" method="_on_down_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down1" to="grid" method="_on_down_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down2" to="grid" method="_on_down_2_pressed"]
+
+[editable path="grid"]
+[editable path="CanvasLayer"]

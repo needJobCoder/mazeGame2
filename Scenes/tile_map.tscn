@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpv7dijsbdl10"]
+
+[ext_resource type="Texture2D" uid="uid://dyhk1p2uwayka" path="res://Assets/Platformer/Tilemap/tilemap_packed.png" id="1_8cxnm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hofhr"]
+texture = ExtResource("1_8cxnm")
+texture_region_size = Vector2i(4, 4)
+32:0/size_in_atlas = Vector2i(4, 23)
+32:0/0 = 0
+36:0/size_in_atlas = Vector2i(4, 23)
+36:0/0 = 0
+32:23/size_in_atlas = Vector2i(8, 4)
+32:23/0 = 0
+32:27/size_in_atlas = Vector2i(8, 4)
+32:27/0 = 0
+18:27/size_in_atlas = Vector2i(14, 4)
+18:27/0 = 0
+18:9/size_in_atlas = Vector2i(14, 18)
+18:9/0 = 0
+18:0/size_in_atlas = Vector2i(14, 4)
+18:0/0 = 0
+17:3/0 = 0
+18:4/size_in_atlas = Vector2i(14, 5)
+18:4/0 = 0
+0:19/size_in_atlas = Vector2i(4, 8)
+0:19/0 = 0
+4:19/size_in_atlas = Vector2i(5, 8)
+4:19/0 = 0
+9:22/size_in_atlas = Vector2i(5, 5)
+9:22/0 = 0
+9:27/size_in_atlas = Vector2i(5, 4)
+9:27/0 = 0
+9:5/size_in_atlas = Vector2i(4, 4)
+9:5/0 = 0
+13:5/size_in_atlas = Vector2i(4, 4)
+13:5/0 = 0
+5:9/size_in_atlas = Vector2i(4, 4)
+5:9/0 = 0
+9:9/size_in_atlas = Vector2i(4, 4)
+9:9/0 = 0
+13:9/size_in_atlas = Vector2i(4, 4)
+13:9/0 = 0
+5:13/size_in_atlas = Vector2i(4, 4)
+5:13/0 = 0
+9:13/size_in_atlas = Vector2i(4, 4)
+9:13/0 = 0
+13:13/size_in_atlas = Vector2i(4, 4)
+13:13/0 = 0
+0:5/size_in_atlas = Vector2i(4, 4)
+0:5/0 = 0
+0:9/size_in_atlas = Vector2i(4, 4)
+0:9/0 = 0
+0:13/size_in_atlas = Vector2i(4, 4)
+0:13/0 = 0
+9:18/size_in_atlas = Vector2i(9, 4)
+9:18/0 = 0
+14:27/size_in_atlas = Vector2i(4, 4)
+14:27/0 = 0
+14:22/size_in_atlas = Vector2i(4, 5)
+14:22/0 = 0
+0:27/size_in_atlas = Vector2i(9, 4)
+0:27/0 = 0
+59:5/size_in_atlas = Vector2i(4, 4)
+59:5/0 = 0
+59:9/size_in_atlas = Vector2i(4, 4)
+59:9/0 = 0
+5:5/size_in_atlas = Vector2i(4, 4)
+5:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yxqw7"]
+sources/2 = SubResource("TileSetAtlasSource_hofhr")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_yxqw7")
+rendering_quadrant_size = 8
+format = 2
