@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpb68f61u6663"]
+
+[ext_resource type="Script" path="res://Scripts/gridCells.gd" id="1_dwfm4"]
+[ext_resource type="PackedScene" uid="uid://bdfw6ln4gwwg2" path="res://Scenes/cell.tscn" id="2_mn2kj"]
+
+[node name="grid" type="Node2D"]
+script = ExtResource("1_dwfm4")
+
+[node name="cell0" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.752941, 0.592157, 0.972549, 1)
+
+[node name="cell1" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.584314, 0.407843, 0.258824, 1)
+
+[node name="cell2" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.164706, 0.211765, 0.00784314, 1)
+
+[node name="cell3" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.678431, 0.364706, 0.0980392, 1)
+
+[node name="cell4" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.0352941, 0.627451, 0.568627, 1)
+
+[node name="cell5" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.8, 0.0666667, 0.47451, 1)
+
+[node name="cell6" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.0117647, 0.270588, 0.215686, 1)
+
+[node name="cell7" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.266667, 0.121569, 0.00784314, 1)
+
+[node name="cell8" parent="." instance=ExtResource("2_mn2kj")]
+modulate = Color(0.219608, 0.321569, 0.109804, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)

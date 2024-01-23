@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://cml78y1xh5g7l"]
+
+[ext_resource type="PackedScene" uid="uid://cpb68f61u6663" path="res://Scenes/grid.tscn" id="1_4hbd8"]
+[ext_resource type="Texture2D" uid="uid://cqg3kucoil21m" path="res://Assets/Sprites/transparent-light/transparentLight22.png" id="2_lkrsp"]
+[ext_resource type="Texture2D" uid="uid://bg5e3olxghnd0" path="res://Assets/Sprites/transparent-light/transparentLight23.png" id="3_wniee"]
+[ext_resource type="Texture2D" uid="uid://n160uhan2w6w" path="res://Assets/Sprites/transparent-light/transparentLight24.png" id="4_36nh1"]
+[ext_resource type="Texture2D" uid="uid://btq80i8obo1gm" path="res://Assets/Sprites/transparent-light/transparentLight25.png" id="5_nu4r3"]
+
+[node name="Test" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_4hbd8")]
+metadata/_edit_group_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left0" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(8, 152)
+texture_normal = ExtResource("2_lkrsp")
+texture_pressed = ExtResource("2_lkrsp")
+
+[node name="left1" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(8, 256)
+texture_normal = ExtResource("2_lkrsp")
+texture_pressed = ExtResource("2_lkrsp")
+
+[node name="left2" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(8, 360)
+texture_normal = ExtResource("2_lkrsp")
+texture_pressed = ExtResource("2_lkrsp")
+
+[node name="right0" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(1064, 184)
+texture_normal = ExtResource("3_wniee")
+texture_pressed = ExtResource("3_wniee")
+
+[node name="right1" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(1064, 280)
+texture_normal = ExtResource("3_wniee")
+texture_pressed = ExtResource("3_wniee")
+
+[node name="right2" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(1064, 384)
+texture_normal = ExtResource("3_wniee")
+texture_pressed = ExtResource("3_wniee")
+
+[node name="up0" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(416, 16)
+texture_normal = ExtResource("4_36nh1")
+
+[node name="up1" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(520, 16)
+texture_normal = ExtResource("4_36nh1")
+
+[node name="up2" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(616, 16)
+texture_normal = ExtResource("4_36nh1")
+
+[node name="down0" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(416, 544)
+texture_normal = ExtResource("5_nu4r3")
+
+[node name="down1" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(528, 544)
+texture_normal = ExtResource("5_nu4r3")
+
+[node name="down2" type="TouchScreenButton" parent="CanvasLayer/Control"]
+position = Vector2(632, 544)
+texture_normal = ExtResource("5_nu4r3")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(584, 328)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="CanvasLayer/Control/left0" to="grid" method="_on_left_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left1" to="grid" method="_on_left_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left2" to="grid" method="_on_left_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right0" to="grid" method="_on_right_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right1" to="grid" method="_on_right_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right2" to="grid" method="_on_right_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up0" to="grid" method="_on_up_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up1" to="grid" method="_on_up_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up2" to="grid" method="_on_up_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down0" to="grid" method="_on_down_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down1" to="grid" method="_on_down_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down2" to="grid" method="_on_down_2_pressed"]
