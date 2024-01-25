@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpb68f61u6663"]
+[gd_scene load_steps=3 format=3 uid="uid://cpb68f61u6663"]
 
 [ext_resource type="Script" path="res://Scripts/gridCells.gd" id="1_dwfm4"]
 [ext_resource type="PackedScene" uid="uid://bdfw6ln4gwwg2" path="res://Scenes/cell.tscn" id="2_mn2kj"]
-[ext_resource type="PackedScene" uid="uid://d2sr8tqcf0wsr" path="res://Scenes/player.tscn" id="3_sje2i"]
 
 [node name="grid" type="Node2D"]
 script = ExtResource("1_dwfm4")
@@ -34,5 +33,5 @@ modulate = Color(0.266667, 0.121569, 0.00784314, 1)
 [node name="cell8" parent="." instance=ExtResource("2_mn2kj")]
 modulate = Color(0.219608, 0.321569, 0.109804, 1)
 
-[node name="player" parent="." instance=ExtResource("3_sje2i")]
-position = Vector2(64, 80)
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)

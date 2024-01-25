@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdfw6ln4gwwg2"]
+[gd_scene load_steps=3 format=3 uid="uid://bdfw6ln4gwwg2"]
 
-[ext_resource type="PackedScene" uid="uid://dtsw66pbg74ef" path="res://Scenes/tilemap.tscn" id="1_0enc3"]
+[ext_resource type="Texture2D" uid="uid://dtgs80quoqera" path="res://icon.svg" id="1_5dimn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4l1x"]
+size = Vector2(128, 128)
 
 [node name="cell" type="Node2D"]
 
-[node name="Tilemap" parent="." instance=ExtResource("1_0enc3")]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_5dimn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_q4l1x")
