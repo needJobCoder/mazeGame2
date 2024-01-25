@@ -43,8 +43,8 @@ func assembleGridPosition():
 	for row in cellsMatrix:
 		var i = 0
 		for element in row:
-			tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
-			#element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
+			#tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
+			element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
 			#print(element.global_position)
 			horizontalGap += 128
 			i += 1
@@ -194,7 +194,7 @@ func _on_down_2_pressed():
 	cellsMatrix = getTranspose(tMatrix)
 	assembleGridPosition()
 	
-func tween(finalPosition : Vector2, cell: Node2D):
-	print("isTweenRunning")
-	var tween = create_tween()
-	tween.tween_property(cell, "global_position", finalPosition, 0.4)
+#func tween(finalPosition : Vector2, cell: Node2D):
+#	print("isTweenRunning")
+#	var tween = create_tween()
+#	tween.tween_property(cell, "global_position", finalPosition, 0.4)
