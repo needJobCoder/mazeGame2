@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://divl6q7jnxj6n"]
+[gd_scene load_steps=6 format=3 uid="uid://divl6q7jnxj6n"]
 
 [ext_resource type="PackedScene" uid="uid://bggraj0iu2sb7" path="res://Scenes/gridWithTilemap.tscn" id="1_thgwi"]
 [ext_resource type="PackedScene" uid="uid://tm3s2ymyuolq" path="res://Scenes/buttonControls.tscn" id="3_luejb"]
 [ext_resource type="PackedScene" uid="uid://52snr6updcpi" path="res://Scenes/spike.tscn" id="3_tc0lq"]
+[ext_resource type="PackedScene" uid="uid://y0vwmn5hrytr" path="res://Scenes/key.tscn" id="4_kpvkl"]
 [ext_resource type="PackedScene" uid="uid://d2sr8tqcf0wsr" path="res://Scenes/player.tscn" id="4_lx55j"]
 
 [node name="Node2D" type="Node2D"]
@@ -47,6 +48,9 @@ position = Vector2(400, 200)
 
 [node name="Node2D7" parent="grid" index="6"]
 position = Vector2(0, 400)
+
+[node name="StaticBody2D" parent="grid/Node2D7/TileMap" index="1" instance=ExtResource("4_kpvkl")]
+position = Vector2(66, 120)
 
 [node name="Node2D8" parent="grid" index="7"]
 position = Vector2(200, 400)
