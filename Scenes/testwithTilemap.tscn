@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://divl6q7jnxj6n"]
+
+[ext_resource type="PackedScene" uid="uid://bggraj0iu2sb7" path="res://Scenes/gridWithTilemap.tscn" id="1_thgwi"]
+[ext_resource type="PackedScene" uid="uid://tm3s2ymyuolq" path="res://Scenes/buttonControls.tscn" id="3_luejb"]
+[ext_resource type="PackedScene" uid="uid://52snr6updcpi" path="res://Scenes/spike.tscn" id="3_tc0lq"]
+[ext_resource type="PackedScene" uid="uid://d2sr8tqcf0wsr" path="res://Scenes/player.tscn" id="4_lx55j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="grid" parent="." instance=ExtResource("1_thgwi")]
+
+[node name="TileMap" parent="grid/Node2D" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072, 1245184, 57, 196608, 1245184, 57, 262144, 1245184, 57, 327680, 1245184, 57, 393216, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57)
+
+[node name="player" parent="grid/Node2D/TileMap" index="0" instance=ExtResource("4_lx55j")]
+position = Vector2(50, 100)
+
+[node name="spike" parent="grid/Node2D/TileMap" index="2" instance=ExtResource("3_tc0lq")]
+position = Vector2(115, 118)
+
+[node name="Node2D2" parent="grid" index="1"]
+position = Vector2(200, 0)
+
+[node name="TileMap" parent="grid/Node2D2" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57, 8, 1245184, 57, 65544, 1245184, 57, 131080, 1245184, 57, 196616, 1245184, 57, 524296, 1245184, 57)
+
+[node name="Node2D3" parent="grid" index="2"]
+position = Vector2(400, 0)
+
+[node name="TileMap" parent="grid/Node2D3" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57, 8, 1245184, 57, 65544, 1245184, 57, 131080, 1245184, 57, 196616, 1245184, 57, 262152, 1245184, 57, 327688, 1245184, 57, 393224, 1245184, 57, 458760, 1245184, 57, 524296, 1245184, 57)
+
+[node name="Node2D4" parent="grid" index="3"]
+position = Vector2(0, 200)
+
+[node name="TileMap" parent="grid/Node2D4" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072, 1245184, 57, 196608, 1245184, 57, 262144, 1245184, 57, 327680, 1245184, 57, 393216, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57, 8, 1245184, 57, 65544, 1245184, 57, 131080, 1245184, 57, 458760, 1245184, 57, 524296, 1245184, 57)
+
+[node name="Node2D5" parent="grid" index="4"]
+position = Vector2(200, 200)
+
+[node name="TileMap" parent="grid/Node2D5" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57, 8, 1245184, 57, 65544, 1245184, 57, 131080, 1245184, 57, 524296, 1245184, 57)
+
+[node name="Node2D6" parent="grid" index="5"]
+position = Vector2(400, 200)
+
+[node name="Node2D7" parent="grid" index="6"]
+position = Vector2(0, 400)
+
+[node name="Node2D8" parent="grid" index="7"]
+position = Vector2(200, 400)
+
+[node name="Node2D9" parent="grid" index="8"]
+position = Vector2(400, 400)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_luejb")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="CanvasLayer/Control/left0" to="grid" method="_on_left_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left1" to="grid" method="_on_left_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/left2" to="grid" method="_on_left_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right0" to="grid" method="_on_right_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right1" to="grid" method="_on_right_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/right2" to="grid" method="_on_right_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up0" to="grid" method="_on_up_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up1" to="grid" method="_on_up_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/up2" to="grid" method="_on_up_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down0" to="grid" method="_on_down_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down1" to="grid" method="_on_down_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/down2" to="grid" method="_on_down_2_pressed"]
+
+[editable path="grid"]
+[editable path="CanvasLayer"]

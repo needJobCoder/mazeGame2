@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var grid : Node2D = $"."
-
+@onready var timer : Timer = $"../Timer"
+@onready var assembleGridRun = 0
 var cellsMatrix  = []
 var horizontalDistance = 128
 var verticalDistance = 128
@@ -35,26 +36,40 @@ func _assembleCells():
 		
 
 func assembleGridPosition():
+	if assembleGridRun > 2:
+		pass
+		#Global.gravity = 0
 	var verticalDistance = 0
 	var horizontalDistance = 0
 	var verticalGap = 50
 	var horizontalGap = 50
+	
+	var player = Global.globalPlayer
+	var playerCollisionShape2D : CollisionShape2D = Global.globalPlayerCollisionShape
+	
+	#if playerCollisionShape2D == null:
+		#pass
+	#else:
+		#playerCollisionShape2D.disabled = true
 
+	
 	for row in cellsMatrix:
 		var i = 0
 		for element in row:
-			tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
-			#element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
+			
+			#tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
+			element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
 			#print(element.global_position)
-			horizontalGap += 128
+			horizontalGap += 140
 			i += 1
 			if i % 3 == 0:
-				verticalGap += 128
+				verticalGap += 10
 				horizontalGap = 50
 
-		verticalGap = 50  # Reset vertical gap for the next row
+		#verticalGap = 50  # Reset vertical gap for the next row
 		verticalDistance += 128
-
+	timer.start()
+	
 			
 func performOperations():
 	for row in range(cellsMatrix.size()):
@@ -195,6 +210,11 @@ func _on_down_2_pressed():
 	assembleGridPosition()
 	
 func tween(finalPosition : Vector2, cell: Node2D):
-	print("isTweenRunning")
 	var tween = create_tween()
+	Global.globalTween = tween
 	tween.tween_property(cell, "global_position", finalPosition, 0.4)
+	
+
+func _on_timer_timeout():
+	pass
+	

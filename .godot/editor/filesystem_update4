@@ -1,7 +1,15 @@
-res://Scenes/player.tscn
-res://Scenes/player_test.tscn
 res://Scenes/cell.tscn
 res://Scenes/test.tscn
 res://Scenes/grid.tscn
+res://Scenes/player.tscn
+res://Scenes/player_test.tscn
 res://Scenes/test_obstacle.tscn
+res://Scenes/tile_map.tscn
+res://Scenes/testwithTilemap.tscn
+res://Scenes/gridWithTilemap.tscn
+res://Scenes/verticalbar.tscn
+res://Scenes/buttonControls.tscn
+res://Scenes/spike.tscn
+res://Scenes/key.tscn
 res://Scripts/player.gd
+res://Scripts/tile_map.gd

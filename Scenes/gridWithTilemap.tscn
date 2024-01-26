@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bggraj0iu2sb7"]
+
+[ext_resource type="Script" path="res://Scripts/gridCells.gd" id="1_rm7ny"]
+[ext_resource type="PackedScene" uid="uid://bfkuajwn43rjc" path="res://Scenes/tile_map.tscn" id="2_xjpn1"]
+
+[node name="grid" type="Node2D"]
+script = ExtResource("1_rm7ny")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D2" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D3" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D4" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D4" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D5" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D5" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D6" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D6" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D7" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D7" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D8" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D8" instance=ExtResource("2_xjpn1")]
+
+[node name="Node2D9" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Node2D9" instance=ExtResource("2_xjpn1")]
