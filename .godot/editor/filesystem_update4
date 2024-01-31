@@ -11,5 +11,3 @@ res://Scenes/verticalbar.tscn
 res://Scenes/buttonControls.tscn
 res://Scenes/spike.tscn
 res://Scenes/key.tscn
-res://Scripts/player.gd
-res://Scripts/tile_map.gd

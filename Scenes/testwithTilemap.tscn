@@ -12,6 +12,7 @@
 
 [node name="TileMap" parent="grid/Node2D" index="0"]
 layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072, 1245184, 57, 196608, 1245184, 57, 262144, 1245184, 57, 327680, 1245184, 57, 393216, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57)
+isPlayerThere = true
 
 [node name="player" parent="grid/Node2D/TileMap" index="0" instance=ExtResource("4_lx55j")]
 position = Vector2(50, 100)
@@ -43,14 +44,20 @@ position = Vector2(200, 200)
 [node name="TileMap" parent="grid/Node2D5" index="0"]
 layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072, 1245184, 57, 458752, 1245184, 57, 524288, 1245184, 57, 524289, 1245184, 57, 524290, 1245184, 57, 524291, 1245184, 57, 524292, 1245184, 57, 524293, 1245184, 57, 524294, 1245184, 57, 524295, 1245184, 57, 7, 1245184, 57, 6, 1245184, 57, 5, 1245184, 57, 4, 1245184, 57, 3, 1245184, 57, 2, 1245184, 57, 1, 1245184, 57, 8, 1245184, 57, 65544, 1245184, 57, 131080, 1245184, 57, 524296, 1245184, 57)
 
+[node name="Camera2D" type="Camera2D" parent="grid/Node2D5/TileMap" index="1"]
+position = Vector2(-200, -200)
+offset = Vector2(400, 250)
+
 [node name="Node2D6" parent="grid" index="5"]
 position = Vector2(400, 200)
 
 [node name="Node2D7" parent="grid" index="6"]
 position = Vector2(0, 400)
 
-[node name="StaticBody2D" parent="grid/Node2D7/TileMap" index="1" instance=ExtResource("4_kpvkl")]
-position = Vector2(66, 120)
+[node name="key" parent="grid/Node2D7/TileMap" index="1" instance=ExtResource("4_kpvkl")]
+position = Vector2(70, 120)
+
+[node name="StaticBody2D2" parent="grid/Node2D7/TileMap" index="2" instance=ExtResource("4_kpvkl")]
 
 [node name="Node2D8" parent="grid" index="7"]
 position = Vector2(200, 400)
@@ -60,10 +67,67 @@ position = Vector2(400, 400)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_luejb")]
 
+[node name="Control" parent="CanvasLayer" index="0"]
+offset_left = -8.0
+offset_right = -8.0
+
+[node name="left0" parent="CanvasLayer/Control" index="0"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(8, 312)
+
+[node name="left1" parent="CanvasLayer/Control" index="1"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(8, 416)
+
+[node name="left2" parent="CanvasLayer/Control" index="2"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(8, 520)
+
+[node name="right0" parent="CanvasLayer/Control" index="3"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(1504, 296)
+
+[node name="right1" parent="CanvasLayer/Control" index="4"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(1504, 392)
+
+[node name="right2" parent="CanvasLayer/Control" index="5"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(1504, 496)
+
+[node name="up0" parent="CanvasLayer/Control" index="6"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(680, 24)
+
+[node name="up1" parent="CanvasLayer/Control" index="7"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(784, 24)
+
+[node name="up2" parent="CanvasLayer/Control" index="8"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(880, 24)
+
+[node name="down0" parent="CanvasLayer/Control" index="9"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(688, 800)
+
+[node name="down1" parent="CanvasLayer/Control" index="10"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(800, 800)
+
+[node name="down2" parent="CanvasLayer/Control" index="11"]
+modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(904, 800)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[node name="activateTween" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="child_exiting_tree" from="." to="grid" method="_on_node_2d_child_exiting_tree"]
 [connection signal="pressed" from="CanvasLayer/Control/left0" to="grid" method="_on_left_0_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/left1" to="grid" method="_on_left_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/left2" to="grid" method="_on_left_2_pressed"]
@@ -76,6 +140,7 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/Control/down0" to="grid" method="_on_down_0_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/down1" to="grid" method="_on_down_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/down2" to="grid" method="_on_down_2_pressed"]
+[connection signal="timeout" from="activateTween" to="grid" method="_on_activate_tween_timeout"]
 
 [editable path="grid"]
 [editable path="CanvasLayer"]

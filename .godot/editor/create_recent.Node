@@ -1,9 +1,10 @@
+Timer
+Camera2D
+Container
 CollisionShape2D
 Area2D
 Sprite2D
 StaticBody2D
-Camera2D
-Timer
 Node2D
 TileMap
 AnimatedSprite2D
@@ -11,4 +12,3 @@ CharacterBody2D
 Popup
 TouchScreenButton
 Control
-CanvasLayer

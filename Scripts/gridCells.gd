@@ -3,6 +3,8 @@ extends Node2D
 @onready var grid : Node2D = $"."
 @onready var timer : Timer = $"../Timer"
 @onready var assembleGridRun = 0
+var index = 0
+var _tween
 var cellsMatrix  = []
 var horizontalDistance = 128
 var verticalDistance = 128
@@ -13,10 +15,11 @@ var verticalDistance = 128
 	#var newArr = rightClickRow(row)
 	#cellsMatrix[1] = newArr
 	#print(cellsMatrix)
-
+@onready var activateTween : Timer = $"../activateTween"
 func _ready():
 	_assembleCells()
 	assembleGridPosition()
+	activateTween.start()
 	
 
 	
@@ -36,6 +39,7 @@ func _assembleCells():
 		
 
 func assembleGridPosition():
+	
 	if assembleGridRun > 2:
 		pass
 		#Global.gravity = 0
@@ -56,9 +60,10 @@ func assembleGridPosition():
 	for row in cellsMatrix:
 		var i = 0
 		for element in row:
-			
-			#tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
-			element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
+			#if index == 0:
+				#element.global_position = Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap)
+			#elif index > 0:
+			tween(Vector2(horizontalDistance + horizontalGap, verticalDistance + verticalGap), element)
 			#print(element.global_position)
 			horizontalGap += 140
 			i += 1
@@ -210,11 +215,20 @@ func _on_down_2_pressed():
 	assembleGridPosition()
 	
 func tween(finalPosition : Vector2, cell: Node2D):
-	var tween = create_tween()
-	Global.globalTween = tween
-	tween.tween_property(cell, "global_position", finalPosition, 0.4)
-	
+	_tween = create_tween()
+	Global.globalTween = _tween
+	_tween.tween_property(cell, "global_position", finalPosition, 0.4)
+	index += 1
 
 func _on_timer_timeout():
 	pass
 	
+
+
+func _on_activate_tween_timeout():
+	index += 1
+	print(index)
+
+
+func _on_node_2d_child_exiting_tree(node):
+	print(node)

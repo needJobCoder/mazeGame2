@@ -57,7 +57,8 @@ layer_0/tile_data = PackedInt32Array(0, 1245184, 57, 65536, 1245184, 57, 131072,
 script = ExtResource("2_l5ofm")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
+disable_mode = 2
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(72, 72.5)

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const GRAVITY = 600
 
 const SPEED = 300.0
 var JUMP_VELOCITY = -800
@@ -17,10 +18,19 @@ func _ready():
 	Global.globalArea2D = get_node("Area2D")
 	
 func _physics_process(delta):
-	#print(Global.globalPlayerCollisionShape.disabled)
-	# Add the gravity.
+	allowGravity()
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	#print(Global.globalPlayerCollisionShape.disabled)
+	# Add the gravity.
+	if Global.allowControls == true:
+		controls(delta)
+	
+
+func controls(delta):
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Space") and is_on_floor():
@@ -44,7 +54,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _on_sprite_2d_animation_finished():
 	pass
 
@@ -54,5 +63,16 @@ func _on_area_2d_body_entered(body):
 	if body is TileMap:
 		print("colliding with tilemap")
 		call_deferred("reparent", body)
-
+		var area2d : Area2D
+		for child in body.get_children():
+			if child is Area2D:
+				area2d = child
 		
+		area2d.monitoring = true
+		body.tile_set.set_physics_layer_collision_layer(0, 2)
+		
+func allowGravity():
+	if Global.globalAllowGravity == false:
+		gravity = 0
+	elif Global.globalAllowGravity == true:
+		gravity = GRAVITY
