@@ -1,4 +1,5 @@
 res://Scenes/cell.tscn
+res://Scripts/spike.gd
 res://Scenes/test.tscn
 res://Scenes/grid.tscn
 res://Scenes/player.tscn
